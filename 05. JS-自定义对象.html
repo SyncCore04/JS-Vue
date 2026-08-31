@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS-函数</title>
+</head>
+<body>
+  
+
+  <script>
+   // 自定义对象
+   let person = {
+    name:'张三',
+    age:18,
+    sex:'男',
+    sayName:function(){
+      console.log(this.name+"我爱吃汉堡");
+    }
+   }
+   // 调用对象的方法
+   person.sayName();
+   console.log(person.age);
+
+   
+   // 自定义对象2
+   let person1 = {
+    name:'李四',
+    age:20,
+    sex:'男',
+    // 方法
+    sayName(){
+      console.log(this.name+"我爱吃汉堡");
+    }
+   }
+   // 调用对象的方法
+   person1.sayName();
+   console.log(person1.age);
+   
+  </script>
+</body>
+</html>
