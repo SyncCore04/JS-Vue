@@ -36,6 +36,25 @@
    // 调用对象的方法
    person1.sayName();
    console.log(person1.age);
+
+   //JSON
+   let person2 = {
+    name:'王五',
+    age:22,
+    sex:'男',
+    
+   }
+   alert(JSON.stringify(person2));
+
+   let personJson = '{"name":"王五","age":22,"sex":"男"}'
+   alert(JSON.parse(personJson).name);
+   
+   // JSON.parse()方法将JSON字符串转换为对象
+   let person3 = JSON.parse(personJson);
+   console.log(person3);
+   console.log(person3.name);
+   console.log(person3.age);
+   console.log(person3.sex);
    
   </script>
 </body>
