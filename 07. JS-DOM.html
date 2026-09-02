@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS-DOM</title>
+</head>
+
+<body>
+
+  <h1 id="title1">11111</h1>
+  <h1>22222</h1>
+  <h1>33333</h1>
+
+  <script>
+    //1.修改第1个h1标题的内容
+    let h1 = document.querySelector('#title1');//也可以用h1，定位的是第一个h1
+    h1.innerHTML = '我是第1个h1标题';
+
+    //2.修改第2个h1标题的内容
+    let hs = document.querySelectorAll('h1');//定位的是所有h1标题
+    hs[1].innerHTML = '我是第2个h1标题';//定位第2个h1标题
+  </script>
+</body>
+
+</html>
