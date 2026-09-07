@@ -81,7 +81,7 @@
         <!-- 顶部导航栏 -->
         <div class="navbar">
             <h1>Tlias智能学习辅助系统</h1>
-            <a href="#">退出登录</a>
+            <a :href="logoutUrl">退出登录</a>
         </div>
 
         <!-- 搜索表单区域 -->
@@ -132,13 +132,13 @@
                     <td>{{ item.id }}</td>
                     <td>{{ item.name }}</td>
                     <td>{{ item.gender === 1 ? '男' : '女' }}</td>
-                    <td>{{ item.image }}</td>
+                    <td><img :src="item.image" class="avatar" alt="头像"></td>
                     <td>{{ item.job }}</td>
                     <td>{{ item.entrydate }}</td>
                     <td>{{ item.updatetime }}</td>
                     <td class="action-buttons">
                         <button type="button">编辑</button>
-                        <button type="button">删除</button>
+                        <button type="button" :disabled="deleteDisabled">删除</button>
                     </td>
                 </tr>
                 
@@ -159,10 +159,12 @@
       createApp({
         data() {
           return {
+            logoutUrl: '/logout',
+            deleteDisabled: false,
             empList: [
               { "id": 1,
                 "name": "谢逊",
-                "image": null,
+                "image": "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png",
                 "gender": 1,
                 "job": "1",
                 "entrydate": "2023-06-09",
@@ -171,7 +173,7 @@
               {
                 "id": 2,
                 "name": "韦一笑",
-                "image": null,
+                "image": "https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png",
                 "gender": 1,
                 "job": "1",
                 "entrydate": "2020-05-09",
@@ -180,7 +182,7 @@
               {
                 "id": 3,
                 "name": "黛绮丝",
-                "image": null,
+                "image": "https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png",
                 "gender": 2,
                 "job": "2",
                 "entrydate": "2021-06-01",
