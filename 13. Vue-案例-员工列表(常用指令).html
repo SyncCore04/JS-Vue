@@ -133,7 +133,13 @@
                     <td>{{ item.name }}</td>
                     <td>{{ item.gender === 1 ? '男' : '女' }}</td>
                     <td><img :src="item.image" class="avatar" alt="头像"></td>
-                    <td>{{ item.job }}</td>
+                    <td>{{ 
+                          item.job === '1' ? '班主任' 
+                        : item.job === '2' ? '讲师' 
+                        : item.job === '3' ? '学工主管' 
+                        : item.job === '4' ? '教研主管' 
+                        : '咨询师' }}
+                    </td>  
                     <td>{{ item.entrydate }}</td>
                     <td>{{ item.updatetime }}</td>
                     <td class="action-buttons">
