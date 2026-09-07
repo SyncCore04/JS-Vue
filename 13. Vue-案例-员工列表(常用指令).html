@@ -115,6 +115,7 @@
             <!-- 表头 -->
             <thead>
                 <tr>
+                    <th>ID</th>
                     <th>姓名</th>
                     <th>性别</th>
                     <th>头像</th>
@@ -128,6 +129,7 @@
             <!-- 表格主体内容 -->
             <tbody>
                 <tr v-for="item in empList" :key="item.id">
+                    <td>{{ item.id }}</td>
                     <td>{{ item.name }}</td>
                     <td>{{ item.gender === 1 ? '男' : '女' }}</td>
                     <td>{{ item.image }}</td>
@@ -160,7 +162,7 @@
             empList: [
               { "id": 1,
                 "name": "谢逊",
-                "image": "https://web-framework.oss-cn-hangzhou.aliyuncs.com/2023/4.jpg",
+                "image": null,
                 "gender": 1,
                 "job": "1",
                 "entrydate": "2023-06-09",
@@ -169,7 +171,7 @@
               {
                 "id": 2,
                 "name": "韦一笑",
-                "image": "https://web-framework.oss-cn-hangzhou.aliyuncs.com/2023/1.jpg",
+                "image": null,
                 "gender": 1,
                 "job": "1",
                 "entrydate": "2020-05-09",
@@ -178,7 +180,7 @@
               {
                 "id": 3,
                 "name": "黛绮丝",
-                "image": "https://web-framework.oss-cn-hangzhou.aliyuncs.com/2023/2.jpg",
+                "image": null,
                 "gender": 2,
                 "job": "2",
                 "entrydate": "2021-06-01",
