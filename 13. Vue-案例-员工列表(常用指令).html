@@ -140,19 +140,22 @@
                         : item.job === '3' ? '学工主管' 
                         : item.job === '4' ? '教研主管' 
                         : '咨询师' }} -->
-                        <!-- v-if 指令 -->
-                        <!-- <span v-if="item.job === '1'">班主任</span>
+                        
+                        <!-- v-if 指令 ，根据表达式的真假，来显示隐藏元素，
+                         本代码适合v-if指令，因为不需要频繁切换显示隐藏 -->
+                        <span v-if="item.job === '1'">班主任</span>
                         <span v-else-if="item.job === '2'">讲师</span>
                         <span v-else-if="item.job === '3'">学工主管</span>
                         <span v-else-if="item.job === '4'">教研主管</span>
-                        <span v-else>咨询师</span> -->
+                        <span v-else>咨询师</span>
                         
-                        <!-- v-show 指令 -->
-                        <span v-show="item.job === '1'">班主任</span>
+                        <!-- v-show 指令 通过display属性来实现显示隐藏，也就是css-->
+                        <!-- <span v-show="item.job === '1'">班主任</span>
                         <span v-show="item.job === '2'">讲师</span>
                         <span v-show="item.job === '3'">学工主管</span>
                         <span v-show="item.job === '4'">教研主管</span>
-                        <span v-show="item.job === '5'">咨询师</span>
+                        <span v-show="item.job === '5'">咨询师</span> -->
+                        
                     </td>  
                     <td>{{ item.entrydate }}</td>
                     <td>{{ item.updatetime }}</td>
