@@ -133,12 +133,18 @@
                     <td>{{ item.name }}</td>
                     <td>{{ item.gender === 1 ? '男' : '女' }}</td>
                     <td><img :src="item.image" class="avatar" alt="头像"></td>
-                    <td>{{ 
+                    <td>
+                        <!-- {{ 
                           item.job === '1' ? '班主任' 
                         : item.job === '2' ? '讲师' 
                         : item.job === '3' ? '学工主管' 
                         : item.job === '4' ? '教研主管' 
-                        : '咨询师' }}
+                        : '咨询师' }} -->
+                        <span v-if="item.job === '1'">班主任</span>
+                        <span v-else-if="item.job === '2'">讲师</span>
+                        <span v-else-if="item.job === '3'">学工主管</span>
+                        <span v-else-if="item.job === '4'">教研主管</span>
+                        <span v-else>咨询师</span>
                     </td>  
                     <td>{{ item.entrydate }}</td>
                     <td>{{ item.updatetime }}</td>
