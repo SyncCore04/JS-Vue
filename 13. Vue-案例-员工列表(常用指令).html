@@ -140,11 +140,19 @@
                         : item.job === '3' ? '学工主管' 
                         : item.job === '4' ? '教研主管' 
                         : '咨询师' }} -->
-                        <span v-if="item.job === '1'">班主任</span>
+                        <!-- v-if 指令 -->
+                        <!-- <span v-if="item.job === '1'">班主任</span>
                         <span v-else-if="item.job === '2'">讲师</span>
                         <span v-else-if="item.job === '3'">学工主管</span>
                         <span v-else-if="item.job === '4'">教研主管</span>
-                        <span v-else>咨询师</span>
+                        <span v-else>咨询师</span> -->
+                        
+                        <!-- v-show 指令 -->
+                        <span v-show="item.job === '1'">班主任</span>
+                        <span v-show="item.job === '2'">讲师</span>
+                        <span v-show="item.job === '3'">学工主管</span>
+                        <span v-show="item.job === '4'">教研主管</span>
+                        <span v-show="item.job === '5'">咨询师</span>
                     </td>  
                     <td>{{ item.entrydate }}</td>
                     <td>{{ item.updatetime }}</td>
