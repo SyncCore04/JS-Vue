@@ -84,20 +84,24 @@
             <a :href="logoutUrl">退出登录</a>
         </div>
 
-        <!-- 搜索表单区域 -->
+        <!-- {{searchForm}} --><!--
+         可在搜索表单中输入姓名、性别、职位进行查询
+         F12 Vue插件中可查看该插值表达式的值  -->
+        
+         <!-- 搜索表单区域 -->
         <form class="search-form" action="/search" method="post">
             <label for="name">姓名：</label>
-            <input type="text" id="name" name="name" placeholder="请输入姓名">
+            <input type="text" v-model="searchForm.name" id="name" name="name" placeholder="请输入姓名">
 
             <label for="gender">性别：</label>
-            <select id="gender" name="gender">
+            <select id="gender" name="gender" v-model="searchForm.gender">
                 <option value=""></option>
                 <option value="1">男</option>
                 <option value="2">女</option>
             </select>
 
             <label for="position">职位：</label>
-            <select id="position" name="position">
+            <select id="position" name="position" v-model="searchForm.job">
                 <option value=""></option>
                 <option value="1">班主任</option>
                 <option value="2">讲师</option>
@@ -106,8 +110,8 @@
                 <option value="5">咨询师</option>
             </select>
 
-            <button type="submit">查询</button>
-            <button type="reset">清空</button>
+            <button type="button" v-on:click="search" >查询</button>
+            <button type="button" @click="clear">清空</button>
         </form>
 
         <!-- 表格展示区 -->
@@ -182,6 +186,11 @@
       createApp({
         data() {
           return {
+            searchForm: { //封装用户输入的查询条件
+              name: '',
+              gender: '',
+              job:''
+            },
             logoutUrl: '/logout',
             deleteDisabled: false,
             empList: [
@@ -213,7 +222,22 @@
               }
             ]
           }
+        },
+        methods: {
+          search() {
+            // 点击查询按钮时，将查询条件发送到服务器
+            console.log(this.searchForm)
+          },
+          clear() {
+            // 点击清空按钮时，清空查询条件
+            this.searchForm = {
+              name: '',
+              gender: '',
+              job:''
+            }
+          }
         }
+
       }).mount('#container')
     </script>
 
